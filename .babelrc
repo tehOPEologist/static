@@ -1,0 +1,24 @@
+{
+    "presets": [
+        ["env", {
+            "loose": true,
+            "modules": false,
+            "targets": {
+                "browsers": [
+                    "last 2 versions",
+                    "not ie 10"
+                ]
+            }
+        }],
+        "react"
+    ],
+    "plugins": [
+        "syntax-dynamic-import",
+        "transform-class-properties",
+        ["transform-runtime", {
+            "helpers": false,
+            "polyfill": false,
+            "regenerator": true
+        }]
+    ]
+}

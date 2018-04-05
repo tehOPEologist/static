@@ -1,0 +1,15 @@
+@import-normalize;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: system-ui;
+}
+
+body {
+    margin: 0;
+}
