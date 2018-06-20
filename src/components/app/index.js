@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
+import { app } from './styles';
 
 class App extends Component {
     state = {};
@@ -14,7 +15,7 @@ class App extends Component {
     render = () => {
         const { Header, Main } = this.state;
 
-        return <div>
+        return <div className={app}>
             {Header && <Header />}
             {Main && <Main />}
         </div>;

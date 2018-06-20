@@ -1,6 +1,8 @@
 const resolve = require('path').resolve;
 const webpack = require('webpack');
 const HtmlPlugin = require('html-webpack-plugin');
+const postcssPresetEnv = require('postcss-preset-env');
+const postcssNormalize = require('postcss-normalize');
 
 module.exports = env => {
     const prod = env === 'production';
@@ -10,7 +12,7 @@ module.exports = env => {
         modules: false,
         assetsSort: 'name'
     };
-    
+
     return {
         context: __dirname,
         devServer: {
@@ -48,7 +50,16 @@ module.exports = env => {
                                 minimize: prod ? true : false
                             }
                         },
-                        'postcss-loader'
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                ident: 'postcss',
+                                plugins: () => [
+                                    postcssPresetEnv(),
+                                    postcssNormalize()
+                                ]
+                            }
+                        }
                     ]
                 }
             ]
